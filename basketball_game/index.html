@@ -95,7 +95,7 @@ function create() {
 
 	score_sound = game.add.audio('score');
 	backboard = game.add.audio('backboard');
-	backboard.volume = 0.5;
+	backboard.volume = 1;
 	whoosh = game.add.audio('whoosh');
 	fail = game.add.audio('fail');
 	fail.volume = 0.1;
@@ -119,7 +119,7 @@ function create() {
 	left_rim.body.setCollisionGroup(collisionGroup);
 	left_rim.body.collides([collisionGroup]);
 
-	right_rim.body.setCircle(2.5);
+	right_rim.body.setCircle(2.8);
 	right_rim.body.static = true;
 	right_rim.body.setCollisionGroup(collisionGroup);
 	right_rim.body.collides([collisionGroup]);
@@ -150,7 +150,7 @@ function update() {
 		var rand = Math.floor(Math.random() * 5);
 		if (ball.body.x > 151 && ball.body.x < 249) {
 			emojiName = "win" + rand;
-			current_score += 2;
+			current_score += 5;
 			current_score_text.text = current_score;
 			score_sound.play();
 		} else {
