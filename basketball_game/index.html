@@ -149,8 +149,8 @@ function update() {
 		ball.body.collideWorldBounds = false;
 		var rand = Math.floor(Math.random() * 5);
 		if (ball.body.x > 151 && ball.body.x < 249) {
-			emojiName = "win" + rand;
-			current_score += 5;
+			emojiName = "winner" + rand;
+			current_score += 10;
 			current_score_text.text = current_score;
 			score_sound.play();
 		} else {
