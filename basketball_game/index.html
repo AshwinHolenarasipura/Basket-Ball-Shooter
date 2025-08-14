@@ -158,7 +158,7 @@ function update() {
 			fail.play();
 			if (current_score > high_score) {
 				high_score = current_score;
-			// 	high_score_text.text = 'High Score\n' + high_score;
+			    high_score_text.text = 'High Score\n' + high_score;
 			}
 			current_score = 0;
 			current_score_text.text = '';
@@ -172,7 +172,7 @@ function update() {
 		moveInTween.onComplete.add(tweenOut, this);
 	}
 
-	if (ball && ball.body.y > 1200) {
+	if (ball && ball.body.y > 1000) {
 		game.physics.p2.gravity.y = 0;
 		ball.kill();
 		createBall();
@@ -181,10 +181,10 @@ function update() {
 }
 
 function tweenOut() {
-	moveOutTween = game.add.tween(emoji).to( { y: 50 }, 600, Phaser.Easing.Elastic.In, true);
+	moveOutTween = game.add.tween(emoji).to( { y: 50 }, 500, Phaser.Easing.Elastic.In, true);
 	moveOutTween.onComplete.add(function() { emoji.kill(); }, this);
 	setTimeout(function () {
-		fadeOutTween = game.add.tween(emoji).to( { alpha: 0 }, 300, Phaser.Easing.Linear.None, true, 0, 0, false);
+		fadeOutTween = game.add.tween(emoji).to( { alpha: 0 }, 500, Phaser.Easing.Linear.None, true, 0, 0, false);
 	}, 500);
 }
 
